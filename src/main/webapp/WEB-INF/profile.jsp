@@ -10,6 +10,8 @@
 
     <div class="container">
         <h1>Welcome, ${sessionScope.user.username}!</h1>
+        <h2>Delete Ad</h2>
+        <input type="submit" class="btn btn-primary btn-block" value="delete">
     </div>
 
 </body>
