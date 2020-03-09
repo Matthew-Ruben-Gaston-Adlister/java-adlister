@@ -9,7 +9,7 @@ import java.io.InputStream;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
-
+// add changes
 public class MySQLAdsDao implements Ads {
     private Connection connection = null;
 // random
@@ -54,6 +54,15 @@ public class MySQLAdsDao implements Ads {
             throw new RuntimeException("Error creating a new ad.", e);
         }
     }
+    public void delete(int id){
+        PreparedStatement stmt;
+        try {
+            stmt = connection.prepareStatement("DELETE FROM ads WHERE id='" +id+"'");
+            stmt.execute();
+        } catch (SQLException e) {
+            throw new RuntimeException("Error deleting ad.");
+        }
+    }
 
     private Ad extractAd(ResultSet rs) throws SQLException {
         return new Ad(
@@ -71,4 +80,6 @@ public class MySQLAdsDao implements Ads {
         }
         return ads;
     }
+
+
 }
