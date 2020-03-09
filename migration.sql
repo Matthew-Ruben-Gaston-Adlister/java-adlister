@@ -1,5 +1,7 @@
 USE adlister_db;
 
+# DROP TABLE IF EXISTS ad_category;
+# DROP TABLE IF EXISTS categories;
 DROP TABLE IF EXISTS ads;
 DROP TABLE IF EXISTS users;
 
@@ -20,3 +22,4 @@ CREATE TABLE ads (
     FOREIGN KEY (user_id) REFERENCES users(id)
         ON DELETE CASCADE
 );
+
