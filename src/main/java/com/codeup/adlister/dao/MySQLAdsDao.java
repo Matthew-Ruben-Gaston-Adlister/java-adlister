@@ -12,7 +12,7 @@ import java.util.List;
 
 public class MySQLAdsDao implements Ads {
     private Connection connection = null;
-
+// random
     public MySQLAdsDao(Config config) {
         try {
             DriverManager.registerDriver(new Driver());
