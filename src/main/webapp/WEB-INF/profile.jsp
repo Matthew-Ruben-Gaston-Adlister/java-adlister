@@ -15,7 +15,7 @@
         <h3>Email: ${sessionScope.user.email}</h3>
         <a href="/ads/create">Create Ad</a>
         <h2>Here are your ads:</h2>
-        <c:forEach var="ad" items="${ads}">
+        <c:forEach var="ad" items="${UserAds}">
             <div class="col-md-6">
                 <h2>${ad.title}</h2>
                 <p>${ad.description}</p>
