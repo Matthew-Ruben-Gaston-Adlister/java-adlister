@@ -65,9 +65,19 @@ public class MySQLAdsDao implements Ads {
         }
     }
 
+    public void getUserAds (int id){
+        PreparedStatement stmt;
+        try {
+            stmt = connection.prepareStatement("SELECT * FROM ads WHERE user_id='" +id+"'");
+            stmt.execute();
+        } catch (SQLException e) {
+            throw new RuntimeException("Error deleting ad.");
+        }
+    }
+
     private Ad extractAd(ResultSet rs) throws SQLException {
         return new Ad(
-            rs.getLong("id"),
+            rs.getLong("ad_id"),
             rs.getLong("user_id"),
             rs.getString("title"),
             rs.getString("description")
