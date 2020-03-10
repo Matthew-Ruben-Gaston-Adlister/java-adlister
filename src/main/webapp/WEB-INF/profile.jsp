@@ -15,17 +15,16 @@
         <h3>Email: ${sessionScope.user.email}</h3>
         <a href="/ads/create">Create Ad</a>
         <h2>Here are your ads:</h2>
-        <c:forEach var="ad" items="${ads}">
+        <c:forEach var="ad" items="${UserAds}">
             <div class="col-md-6">
                 <h2>${ad.title}</h2>
                 <p>${ad.description}</p>
-                <input type="submit" class="btn btn-primary btn-block" value="delete">
-                <form action="${pageContext.request.contextPath}/delete" method="post">
-                    <input type="submit" name="button1" value="Button 1" />
-                    <input type="submit" name="button2" value="Button 2" />
-                    <input type="submit" name="button3" value="Button 3" />
+                <form method="POST" action="/delete">
+                    <input type="hidden" id="ad_id" name="ads.ad_id" value="${ads.ad_id}">
+                    <input type="submit" class="btn btn-primary btn-block" value="delete">
                 </form>
-                <input type="submit" class="btn btn-primary btn-block" value="update">
+<%--                <a href="/delete"><input type="submit" class="btn btn-primary btn-block" value="delete"></a>--%>
+                <a href="/updateAd"><input type="submit" class="btn btn-primary btn-block" value="update"></a>
             </div>
         </c:forEach>
     </div>
