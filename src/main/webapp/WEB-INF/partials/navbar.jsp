@@ -6,7 +6,9 @@
         </div>
         <ul class="nav navbar-nav navbar-right">
             <li><a href="/login">Login</a></li>
-            <li><a href="/logout">Register</a></li>
+            <li><a href="/profile">Profile</a></li>
+            <li><a href="/logout">Logout</a></li>
+            <li><a href="/register">Register</a></li>
         </ul>
     </div><!-- /.navbar-collapse -->
     <form class="form-inline my-2 my-lg-0">
