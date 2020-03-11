@@ -35,19 +35,15 @@ public class MySQLUsersDao implements Users {
     }
 
     @Override
-    public User updateUser(User user, int id) {
-        String query = "UPDATE users SET username = ?, email = ?, password = ? WHERE id = '" + id + "'";
+    public void updateUser(User user) {
+        String query = "UPDATE users SET username = ?, email = ?, password = ? WHERE id = ?";
         try {
             PreparedStatement stmt = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
             stmt.setString(1, user.getUsername());
             stmt.setString(2, user.getEmail());
             stmt.setString(3, user.getPassword());
+            stmt.setLong(4, user.getId());
             stmt.executeUpdate();
-            String newQuery = "SELECT * FROM users WHERE id = '"+ id + "'";
-            stmt = connection.prepareStatement(newQuery);
-            ResultSet rs = stmt.executeQuery();
-            return extractUser(rs);
-
         } catch (SQLException e) {
             throw new RuntimeException("Error updating user", e);
         }
