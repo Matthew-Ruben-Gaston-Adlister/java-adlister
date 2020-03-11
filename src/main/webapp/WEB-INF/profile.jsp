@@ -16,7 +16,7 @@
         <jsp:include page="/WEB-INF/partials/navbar.jsp"/>
     </c:otherwise>
 </c:choose>
-
+<%--comment--%>
 <div class="container">
     <h1>Welcome, to your profile ${sessionScope.user.username}!</h1>
     <h4>Email: ${sessionScope.user.email}</h4>

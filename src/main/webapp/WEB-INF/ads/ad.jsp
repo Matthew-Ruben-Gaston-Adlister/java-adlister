@@ -16,9 +16,9 @@
         <jsp:include page="/WEB-INF/partials/navbar.jsp" />
     </c:otherwise>
 </c:choose>
-<div class="container" style="margin-top: 5em">
-    <h1>Here is the ad!</h1>
 
+    <h1>Here is the ad!</h1>
+<div class="container" style="margin-top: 5em">
     <c:forEach var="ad" items="${UserAds}">
         <div>
             <c:if test="${ad.id == sessionScope.id}">
