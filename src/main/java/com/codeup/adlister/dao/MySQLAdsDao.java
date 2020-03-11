@@ -53,7 +53,8 @@ public class MySQLAdsDao implements Ads {
         }
     }
 
-    public void delete(int id){
+    @Override
+    public void delete(int id) {
         PreparedStatement stmt;
         try {
             stmt = connection.prepareStatement("DELETE FROM ads WHERE id='" +id+"'");
@@ -62,7 +63,6 @@ public class MySQLAdsDao implements Ads {
             throw new RuntimeException("Error deleting ad.");
         }
     }
-
 
     @Override
     public List<Ad> getUserAds(Long id){
@@ -76,11 +76,22 @@ public class MySQLAdsDao implements Ads {
         }
     }
 
+    @Override
+    public List<Ad> chosenAd(int id){
+        PreparedStatement stmt;
+        try {
+            stmt = connection.prepareStatement("SELECT * FROM ads WHERE id = '"+ id+"'");
+            ResultSet rs = stmt.executeQuery();
+            return createAdsFromResults(rs);
+        } catch (SQLException e) {
+            throw new RuntimeException("Error retrieving ads.", e);
+        }
+    }
 
     private Ad extractAd(ResultSet rs) throws SQLException {
         return new Ad(
-            rs.getLong("ad_id"),
-            rs.getLong("user_id"),
+            rs.getLong("id"),
+            rs.getLong("id"),
             rs.getString("title"),
             rs.getString("description")
         );
@@ -93,13 +104,25 @@ public class MySQLAdsDao implements Ads {
         }
         return ads;
     }
+
+    public Ad getAdById(int ad_id) {
+        try {
+            PreparedStatement stmt = connection.prepareStatement("SELECT * FROM ads WHERE id = ?");
+            stmt.setLong(1, ad_id);
+            ResultSet rs = stmt.executeQuery();
+            rs.next();
+            return extractAd(rs);
+        } catch (SQLException e) {
+            throw new RuntimeException("Error retrieving ads by id.", e);
+        }
+    }
+
     public void updateAd(Ad ad) {
         try {
-            String insertQuery = "UPDATE ads SET title = ?, description = ?, date = ? WHERE id = ?";
+            String insertQuery = "UPDATE ads SET title = ?, description = ? WHERE id = ?";
             PreparedStatement stmt = connection.prepareStatement(insertQuery, Statement.RETURN_GENERATED_KEYS);
             stmt.setString(1, ad.getTitle());
             stmt.setString(2, ad.getDescription());
-            stmt.setInt(4, (int) ad.getId());
             stmt.executeUpdate();
         } catch (SQLException e) {
             throw new RuntimeException("Error increasing product #" + ad.getId() + " quantity", e);
