@@ -28,11 +28,6 @@
             <h2>${ad.title}</h2>
             <p>${ad.description}</p>
             <a href="<%=link%>${ad.id}"><input type="submit" class="btn btn-primary btn-block" value="View Posting"></a>
-            <form action="/delete" method="post">
-                <input type="hidden" name="ad_id" value="${ad.id}">
-                <input class="btn btn-danger btn-sm" type="submit" name="deleteBtn" value="Delete">
-            </form>
-            <a href="/updateAd"><input type="submit" class="btn btn-primary btn-block" value="update"></a>
         </div>
     </c:forEach>
 </div>
