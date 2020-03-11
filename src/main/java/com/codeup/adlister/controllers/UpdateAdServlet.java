@@ -11,9 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+
 //comment
 @WebServlet(name = "controllers.UpdateAdServlet", urlPatterns = "/updateAd")
 public class UpdateAdServlet extends HttpServlet {
@@ -28,6 +26,7 @@ public class UpdateAdServlet extends HttpServlet {
         HttpSession session = request.getSession();
         String title = request.getParameter("editTitle");
         String description = request.getParameter("editDescription");
+        String v = (String) request.getParameter("ad_id");
         if (title != null && description != null) {
             try {
                 Ad ad = DaoFactory.getAdsDao().getAdById( Integer.parseInt((String)session.getAttribute("id")));
