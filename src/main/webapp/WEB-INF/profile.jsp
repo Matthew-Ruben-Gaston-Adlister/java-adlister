@@ -25,14 +25,10 @@
     <c:forEach var="ad" items="${UserAds}">
         <div class="col-md-6">
             <%! String link = "/ads/ad?id=";%>
-            <h2>${ad.title}</h2>
-            <p>${ad.description}</p>
+            <h4>Title: ${ad.title}</h4>
+            <p>Description: ${ad.description}</p>
+            <p>Price: $${ad.price}</p>
             <a href="<%=link%>${ad.id}"><input type="submit" class="btn btn-primary btn-block" value="View Posting"></a>
-            <form action="/delete" method="post">
-                <input type="hidden" name="ad_id" value="${ad.id}">
-                <input class="btn btn-danger btn-sm" type="submit" name="deleteBtn" value="Delete">
-            </form>
-            <a href="/updateAd"><input type="submit" class="btn btn-primary btn-block" value="update"></a>
         </div>
     </c:forEach>
 </div>
