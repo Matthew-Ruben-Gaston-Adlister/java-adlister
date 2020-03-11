@@ -20,14 +20,17 @@
 <div class="container">
     <h1>Welcome, to your profile ${sessionScope.user.username}!</h1>
     <h4>Email: ${sessionScope.user.email}</h4>
+    <a href="/editProfile"><input type="submit" class="btn btn-primary btn-block" value="Edit Profile"></a>
     <h2>Here are your created ads:</h2>
     <c:forEach var="ad" items="${UserAds}">
         <div class="col-md-6">
+            <%! String link = "/ads/ad?id=";%>
             <h2>${ad.title}</h2>
             <p>${ad.description}</p>
-            <form method="POST" action="/delete">
-                <input type="hidden" id="ad_id" name="ads.ad_id" value="${ads.ad_id}">
-                <input type="submit" class="btn btn-primary btn-block" value="delete">
+            <a href="<%=link%>${ad.id}"><input type="submit" class="btn btn-primary btn-block" value="View Posting"></a>
+            <form action="/delete" method="post">
+                <input type="hidden" name="ad_id" value="${ad.id}">
+                <input class="btn btn-danger btn-sm" type="submit" name="deleteBtn" value="Delete">
             </form>
             <a href="/updateAd"><input type="submit" class="btn btn-primary btn-block" value="update"></a>
         </div>
