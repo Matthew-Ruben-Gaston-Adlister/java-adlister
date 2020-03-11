@@ -20,7 +20,7 @@
 <div class="container">
     <h1>Welcome, to your profile ${sessionScope.user.username}!</h1>
     <h4>Email: ${sessionScope.user.email}</h4>
-    <a href="/editProfile"><input type="submit" class="btn btn-primary btn-block" value="Edit Profile"></a>
+    <a href="/update"><input type="submit" class="btn btn-primary btn-block" value="Edit Profile"></a>
     <h2>Here are your created ads:</h2>
     <c:forEach var="ad" items="${UserAds}">
         <div class="col-md-6">
