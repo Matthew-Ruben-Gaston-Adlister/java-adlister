@@ -1,6 +1,7 @@
 package com.codeup.adlister.controllers;
 
 import com.codeup.adlister.dao.DaoFactory;
+import com.codeup.adlister.models.Ad;
 import com.codeup.adlister.models.User;
 
 import javax.servlet.ServletException;
@@ -47,11 +48,13 @@ public class UpdateServlet extends HttpServlet {
             session.setAttribute("notMatch", true);
         }
         if (!changeName.isEmpty() && !changeEmail.isEmpty() && changePassword.equals(checkPassword)){
-            User user = new User(changeName, changeEmail, changePassword);
-            long id = (long) session.getAttribute("loggedId");
+            User user = (User) session.getAttribute("user");
+            user.setUsername(changeName);
+            user.setEmail(changeEmail);
+            user.setPassword(changePassword);
 
-            User updated = DaoFactory.getUsersDao().updateUser(user, (int) id);
-            session.setAttribute("user", updated);
+            DaoFactory.getUsersDao().updateUser(user);
+            session.setAttribute("user", user);
             session.setAttribute("passwordChanged", true);
             response.sendRedirect("/profile");
             return;

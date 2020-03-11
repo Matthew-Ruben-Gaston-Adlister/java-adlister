@@ -38,7 +38,9 @@
                 <label for="checkUpdate">Confirm New Password: </label>
                 <input id="checkUpdate" name="checkUpdate" class="form-control" type="password">
             </div>
-            <input type="submit" class="btn btn-primary btn-block" value="Update Profile">
+<%--            <input type="submit" class="btn btn-primary btn-block" value="Update Profile">--%>
+            <a href="/update"><input type="submit" class="btn btn-primary btn-block" value="Edit Profile"></a>
+
         </form>
     </div>
 </div>

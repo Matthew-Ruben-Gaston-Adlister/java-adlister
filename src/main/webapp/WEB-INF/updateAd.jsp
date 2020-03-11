@@ -26,7 +26,10 @@
             <label for="description">Description</label>
             <textarea id="description" name="editDescription" class="form-control" type="text"></textarea>
         </div>
-        <input type="submit" class="btn btn-block btn-primary">
+        <form action="/updateAd" method="post">
+            <input type="hidden" name="ad_id" value="${ad.id}">
+            <input class="btn btn-danger btn-sm" type="submit" name="updateBtn" value="update">
+        </form>
     </form>
 </div>
 </body>
