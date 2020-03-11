@@ -26,6 +26,7 @@ public class UpdateAdServlet extends HttpServlet {
         HttpSession session = request.getSession();
         String title = request.getParameter("editTitle");
         String description = request.getParameter("editDescription");
+        String v = (String) request.getParameter("ad_id");
         if (title != null && description != null) {
             try {
                 Ad ad = DaoFactory.getAdsDao().getAdById( Integer.parseInt((String)session.getAttribute("id")));

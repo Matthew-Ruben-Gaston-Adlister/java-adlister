@@ -16,7 +16,7 @@
         <jsp:include page="/WEB-INF/partials/navbar.jsp"/>
     </c:otherwise>
 </c:choose>
-
+<%--comment--%>
 <div class="container">
     <h1>Welcome, to your profile ${sessionScope.user.username}!</h1>
     <h4>Email: ${sessionScope.user.email}</h4>
@@ -25,8 +25,9 @@
     <c:forEach var="ad" items="${UserAds}">
         <div class="col-md-6">
             <%! String link = "/ads/ad?id=";%>
-            <h2>${ad.title}</h2>
-            <p>${ad.description}</p>
+            <h4>Title: ${ad.title}</h4>
+            <p>Description: ${ad.description}</p>
+            <p>Price: $${ad.price}</p>
             <a href="<%=link%>${ad.id}"><input type="submit" class="btn btn-primary btn-block" value="View Posting"></a>
         </div>
     </c:forEach>
