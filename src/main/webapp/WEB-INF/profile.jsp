@@ -18,6 +18,9 @@
 </c:choose>
 <%--comment--%>
 <div class="container">
+    <br>
+    <br>
+    <br>
     <h1>Welcome, to your profile ${sessionScope.user.username}!</h1>
     <h4>Email: ${sessionScope.user.email}</h4>
     <a href="/update"><input type="submit" class="btn btn-primary btn-block" value="Edit Profile"></a>

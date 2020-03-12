@@ -18,6 +18,9 @@
 </c:choose>
 
 <div class="container">
+    <br>
+    <br>
+    <br>
     <h1>Here are all the ads!</h1>
 
     <c:forEach var="ad" items="${ads}">

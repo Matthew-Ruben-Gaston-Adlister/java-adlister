@@ -27,7 +27,6 @@ public class UpdateAdServlet extends HttpServlet {
         String title = request.getParameter("editTitle");
         String description = request.getParameter("editDescription");
         String price = request.getParameter("editPrice");
-        String v = (String) request.getParameter("ad_id");
 
         if (title != null && description != null && price != null) {
             try {
