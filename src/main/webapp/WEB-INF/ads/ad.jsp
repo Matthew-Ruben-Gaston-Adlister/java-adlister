@@ -22,8 +22,9 @@
         <div>
             <c:if test="${ad.id == sessionScope.id}">
                 <h4>${ad.title}</h4>
-                <p>${ad.description}</p>
-                <p>$${ad.price}</p>
+                <h6>${ad.description}</h6>
+                <h6>$${ad.price}</h6>
+                <p>Posted by: ${sessionScope.user.username}</p>
 
                 <form action="/delete" method="post">
                     <input type="hidden" name="ad_id" value="${ad.id}">
