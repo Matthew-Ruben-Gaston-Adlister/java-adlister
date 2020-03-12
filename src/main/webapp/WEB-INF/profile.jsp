@@ -29,9 +29,9 @@
         <div>
             <%! String link = "/ads/ad?id=";%>
             <h4>${ad.title}</h4>
-            <p>${ad.description}</p>
+            <h6>${ad.description}</h6>
+            <h6>$${ad.price}</h6>
             <a href="<%=link%>${ad.id}"><input type="submit" class="btn btn-dark btn-lg" value="View Posting"></a>
-            <p>$${ad.price}</p>
         </div>
     </c:forEach>
 </div>
