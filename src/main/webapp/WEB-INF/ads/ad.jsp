@@ -16,21 +16,23 @@
         <jsp:include page="/WEB-INF/partials/navbar.jsp" />
     </c:otherwise>
 </c:choose>
-<div class="container" style="margin-top: 5em">
     <h1>Here is the ad!</h1>
-
+<div class="container" style="margin-top: 5em">
     <c:forEach var="ad" items="${UserAds}">
         <div>
             <c:if test="${ad.id == sessionScope.id}">
-                <p>${ad.title}</p>
-                <p>${ad.description}</p>
+                <h4>${ad.title}</h4>
+                <h6>${ad.description}</h6>
+                <h6>$${ad.price}</h6>
+                <p>Posted by: ${sessionScope.user.username}</p>
+
                 <form action="/delete" method="post">
                     <input type="hidden" name="ad_id" value="${ad.id}">
-                    <input class="btn btn-danger btn-sm" type="submit" name="deleteBtn" value="Delete">
+                    <input class="btn btn-dark btn-sm" type="submit" name="deleteBtn" value="Delete">
                 </form>
                 <form action="/updateAd" method="post">
                     <input type="hidden" name="other" value="${ad.id}">
-                    <input class="btn btn-warning btn-sm" name="updateBtn" type="submit" value="Update">
+                    <input class="btn btn-dark btn-sm" name="updateBtn" type="submit" value="Update">
                 </form>
             </c:if>
         </div>
