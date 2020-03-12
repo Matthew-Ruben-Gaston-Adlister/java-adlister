@@ -25,9 +25,9 @@
     <c:forEach var="ad" items="${UserAds}">
         <div class="col-md-6">
             <%! String link = "/ads/ad?id=";%>
-            <h4>Title: ${ad.title}</h4>
-            <p>Description: ${ad.description}</p>
-            <p>Price: $${ad.price}</p>
+            <h4>${ad.title}</h4>
+            <p>${ad.description}</p>
+            <p>$${ad.price}</p>
             <a href="<%=link%>${ad.id}"><input type="submit" class="btn btn-primary btn-block" value="View Posting"></a>
         </div>
     </c:forEach>
