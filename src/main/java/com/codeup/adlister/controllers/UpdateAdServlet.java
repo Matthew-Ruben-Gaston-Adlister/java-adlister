@@ -26,11 +26,15 @@ public class UpdateAdServlet extends HttpServlet {
         HttpSession session = request.getSession();
         String title = request.getParameter("editTitle");
         String description = request.getParameter("editDescription");
-        if (title != null && description != null) {
+        String price = request.getParameter("editPrice");
+
+
+        if (title != null && description != null && price != null) {
             try {
                 Ad ad = DaoFactory.getAdsDao().getAdById( Integer.parseInt((String)session.getAttribute("id")));
                 ad.setTitle(title);
                 ad.setDescription(description);
+                ad.setPrice(price);
                 DaoFactory.getAdsDao().updateAd(ad);
                 response.sendRedirect("/profile");
             } catch (NumberFormatException e) {

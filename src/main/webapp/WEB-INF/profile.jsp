@@ -16,18 +16,22 @@
         <jsp:include page="/WEB-INF/partials/navbar.jsp"/>
     </c:otherwise>
 </c:choose>
-
+<%--comment--%>
 <div class="container">
+    <br>
+    <br>
+    <br>
     <h1>Welcome, to your profile ${sessionScope.user.username}!</h1>
     <h4>Email: ${sessionScope.user.email}</h4>
-    <a href="/update"><input type="submit" class="btn btn-primary btn-lg" value="Edit Profile"></a>
+    <a href="/update"><input type="submit" class="btn btn-dark btn-lg" value="Edit Profile"></a>
     <h2>Here are your created ads:</h2>
     <c:forEach var="ad" items="${UserAds}">
         <div>
             <%! String link = "/ads/ad?id=";%>
-            <h2>${ad.title}</h2>
+            <h4>${ad.title}</h4>
             <p>${ad.description}</p>
-            <a href="<%=link%>${ad.id}"><input type="submit" class="btn btn-primary btn-lg" value="View Posting"></a>
+            <a href="<%=link%>${ad.id}"><input type="submit" class="btn btn-dark btn-lg" value="View Posting"></a>
+            <p>$${ad.price}</p>
         </div>
     </c:forEach>
 </div>
