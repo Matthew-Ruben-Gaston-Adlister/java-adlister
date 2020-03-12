@@ -16,7 +16,6 @@
         <jsp:include page="/WEB-INF/partials/navbar.jsp" />
     </c:otherwise>
 </c:choose>
-
     <h1>Here is the ad!</h1>
 <div class="container" style="margin-top: 5em">
     <c:forEach var="ad" items="${UserAds}">
