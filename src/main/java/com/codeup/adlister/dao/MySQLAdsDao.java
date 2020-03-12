@@ -121,11 +121,12 @@ public class MySQLAdsDao implements Ads {
 
     public void updateAd(Ad ad) {
         try {
-            String insertQuery = "UPDATE ads SET title = ?, description = ? WHERE id = ?";
+            String insertQuery = "UPDATE ads SET title = ?, description = ?, price = ? WHERE id = ?";
             PreparedStatement stmt = connection.prepareStatement(insertQuery, Statement.RETURN_GENERATED_KEYS);
             stmt.setString(1, ad.getTitle());
             stmt.setString(2, ad.getDescription());
-            stmt.setInt(3,(int) ad.getId());
+            stmt.setString(3, ad.getPrice());
+            stmt.setInt(4, (int) ad.getId());
             stmt.executeUpdate();
         } catch (SQLException e) {
             throw new RuntimeException("Error increasing product #" + ad.getId() + " quantity", e);
