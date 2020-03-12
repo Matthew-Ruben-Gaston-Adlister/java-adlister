@@ -1,4 +1,4 @@
-<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
+<nav class="navbar fixed-top sticky-top navbar-expand-lg navbar-dark bg-dark fixed-top">
     <a class="navbar-brand" href="#">
         <img src="/resources/img/TacoCorp_logo.png" width="30" height="30" alt="">
     </a>

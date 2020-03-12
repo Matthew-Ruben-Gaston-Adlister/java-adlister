@@ -1,4 +1,6 @@
 #jumbotron {
-    background-size: cover;
+    background-image: url("/resources/img/storageunit.png");
+    background-position: center;
     text-align: right;
 }
+
