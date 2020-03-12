@@ -1,8 +1,11 @@
 USE adlister_db;
 
+SET FOREIGN_KEY_CHECKS=0; -- to disable them
+
 DROP TABLE IF EXISTS ads;
 DROP TABLE IF EXISTS users;
 DROP TABLE IF EXISTS categories;
+DROP TABLE IF EXISTS price;
 DROP TABLE IF EXISTS ads_categories;
 
 CREATE TABLE users

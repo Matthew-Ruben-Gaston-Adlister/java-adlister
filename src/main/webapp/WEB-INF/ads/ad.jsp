@@ -21,15 +21,17 @@
     <c:forEach var="ad" items="${UserAds}">
         <div>
             <c:if test="${ad.id == sessionScope.id}">
-                <p>${ad.title}</p>
+                <h4>${ad.title}</h4>
                 <p>${ad.description}</p>
+                <p>$${ad.price}</p>
+
                 <form action="/delete" method="post">
                     <input type="hidden" name="ad_id" value="${ad.id}">
-                    <input class="btn btn-danger btn-sm" type="submit" name="deleteBtn" value="Delete">
+                    <input class="btn btn-dark btn-sm" type="submit" name="deleteBtn" value="Delete">
                 </form>
                 <form action="/updateAd" method="post">
                     <input type="hidden" name="other" value="${ad.id}">
-                    <input class="btn btn-warning btn-sm" name="updateBtn" type="submit" value="Update">
+                    <input class="btn btn-dark btn-sm" name="updateBtn" type="submit" value="Update">
                 </form>
             </c:if>
         </div>
