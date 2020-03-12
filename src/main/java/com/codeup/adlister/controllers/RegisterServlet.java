@@ -29,6 +29,8 @@ public class RegisterServlet extends HttpServlet {
             || (! password.equals(passwordConfirmation));
 
         if (inputHasErrors) {
+            String message = "all fields must be entered";
+            request.getSession().setAttribute("message", message);
             response.sendRedirect("/register");
             return;
         }

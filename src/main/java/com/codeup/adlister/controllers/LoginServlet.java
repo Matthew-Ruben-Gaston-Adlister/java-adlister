@@ -27,6 +27,8 @@ public class LoginServlet extends HttpServlet {
         User user = DaoFactory.getUsersDao().findByUsername(username);
 
         if (user == null) {
+            String message = "all fields must be entered";
+            request.getSession().setAttribute("message", message);
             response.sendRedirect("/login");
             return;
         }
@@ -37,6 +39,8 @@ public class LoginServlet extends HttpServlet {
             request.getSession().setAttribute("user", user);
             response.sendRedirect("/profile");
         } else {
+            String message = "your username or password is incorrect";
+            request.getSession().setAttribute("message", message);
             response.sendRedirect("/login");
         }
     }
