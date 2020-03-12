@@ -28,6 +28,7 @@ public class UpdateAdServlet extends HttpServlet {
         String description = request.getParameter("editDescription");
         String price = request.getParameter("editPrice");
 
+
         if (title != null && description != null && price != null) {
             try {
                 Ad ad = DaoFactory.getAdsDao().getAdById( Integer.parseInt((String)session.getAttribute("id")));
