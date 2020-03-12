@@ -35,9 +35,5 @@
         </div>
     </c:forEach>
 </div>
-
-<%--<button type="button" class="btn btn-primary btn-lg">Large button</button>--%>
-<%--<button type="button" class="btn btn-secondary btn-lg">Large button</button>--%>
-
 </body>
 </html>

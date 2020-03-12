@@ -1,6 +1,6 @@
 <nav class="navbar fixed-top sticky-top navbar-expand-lg navbar-dark bg-dark fixed-top">
     <a class="navbar-brand" href="#">
-        <img src="/resources/img/TacoCorp_logo.png" width="30" height="30" alt="">
+        <img src="/resources/img/TacoCorp_logo.png" width="80" height="40" alt="">
     </a>
     <div class="container-fluid">
         <div class="navbar-header">
@@ -19,3 +19,4 @@
         </ul>
     </div>
 </nav>
+
