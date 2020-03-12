@@ -23,20 +23,21 @@
     <br>
     <h1>Welcome, to your profile ${sessionScope.user.username}!</h1>
     <h4>Email: ${sessionScope.user.email}</h4>
-    <a href="/update"><input type="submit" class="btn btn-dark btn-block" value="Edit Profile"></a>
+    <a href="/update"><input type="submit" class="btn btn-dark btn-lg" value="Edit Profile"></a>
     <h2>Here are your created ads:</h2>
     <c:forEach var="ad" items="${UserAds}">
-        <div class="col-md-6">
+        <div>
             <%! String link = "/ads/ad?id=";%>
             <h4>${ad.title}</h4>
             <p>${ad.description}</p>
+            <a href="<%=link%>${ad.id}"><input type="submit" class="btn btn-dark btn-lg" value="View Posting"></a>
             <p>$${ad.price}</p>
-
-            <a href="<%=link%>${ad.id}"><input type="submit" class="btn btn-dark btn-block" value="View Posting"></a>
-
         </div>
     </c:forEach>
 </div>
+
+<%--<button type="button" class="btn btn-primary btn-lg">Large button</button>--%>
+<%--<button type="button" class="btn btn-secondary btn-lg">Large button</button>--%>
 
 </body>
 </html>

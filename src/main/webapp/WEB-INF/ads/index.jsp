@@ -24,6 +24,7 @@
     <h1>Here are all the ads!</h1>
 
     <c:forEach var="ad" items="${ads}">
+
         <div class="col-md-6">
             <h4>${ad.title}</h4>
             <p>${ad.description}</p>

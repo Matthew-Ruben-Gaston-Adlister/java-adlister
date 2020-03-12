@@ -1,6 +1,6 @@
-<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
+<nav class="navbar fixed-top sticky-top navbar-expand-lg navbar-dark bg-dark fixed-top">
     <a class="navbar-brand" href="#">
-        <img src="/resources/img/TacoCorp_logo.png" width="30" height="30" alt="">
+        <img src="/resources/img/TacoCorp_logo.png" width="80" height="40" alt="">
     </a>
     <div class="container-fluid">
         <div class="navbar-header">
@@ -16,9 +16,11 @@
         </ul>
     </div>
 </nav>
-<div class="jumbotron jumbotron-fluid" id="jumbotron">
+<div  class="jumbotron jumbotron-fluid" id="jumbotron">
     <div class="container">
         <h1 class="display-4">Sell your Junk</h1>
         <p class="lead">Random stuff for sale that you dont need or probably doesnt work</p>
     </div>
 </div>
+
+
