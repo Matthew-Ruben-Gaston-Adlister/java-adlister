@@ -17,15 +17,14 @@
     </c:otherwise>
 </c:choose>
     <h1>Here is the ad!</h1>
-<div class="container" style="margin-top: 5em">
+<div class="card" style="width: 18rem;">
     <c:forEach var="ad" items="${UserAds}">
-        <div>
+        <div class="card-body">
             <c:if test="${ad.id == sessionScope.id}">
-                <h4>${ad.title}</h4>
-                <h6>${ad.description}</h6>
-                <h6>$${ad.price}</h6>
+                <h4 class="card-title">${ad.title}</h4>
+                <h6 class="card-text" >${ad.description}</h6>
+                <h6 class="card-subtitle mb-2 text-muted" >$${ad.price}</h6>
                 <p>Posted by: ${sessionScope.user.username}</p>
-
                 <form action="/delete" method="post">
                     <input type="hidden" name="ad_id" value="${ad.id}">
                     <input class="btn btn-dark btn-sm" type="submit" name="deleteBtn" value="Delete">

@@ -8,7 +8,6 @@
 </head>
 <body>
     <jsp:include page="/WEB-INF/partials/navbar.jsp" />
-
     <div class="container">
         <h3 class="text-danger"> ${message}</h3>
         <c:remove var="message" scope="session" />

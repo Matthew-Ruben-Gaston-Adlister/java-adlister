@@ -7,10 +7,6 @@
     </jsp:include>
 </head>
 <body>
-<c:if test="${sessionScope.snackDeleted}">
-    <h1 style="color: red;">Your snack is successfully deleted.</h1>
-    <% request.getSession().removeAttribute("snackDeleted"); %>
-</c:if>
 <c:choose>
     <c:when test="${sessionScope.user.username != null}">
         <jsp:include page="/WEB-INF/partials/navbarLoggedIn.jsp"/>
